@@ -6,10 +6,9 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace HeimrichHannot\GoogleTagManager\DataLayer;
+namespace HeimrichHannot\GoogleTagManagerBundle\DataLayer;
 
 use HeimrichHannot\GoogleTagManagerBundle\Manager\GoogleTagManager;
-use HeimrichHannot\GoogleTagManagerBundle\Tag\DataLayerInterface;
 
 class DataLayer implements DataLayerInterface
 {
@@ -53,7 +52,7 @@ class DataLayer implements DataLayerInterface
      */
     public function hasContent()
     {
-        return empty($this->getContent());
+        return empty($this->getContent()) ? false : true;
     }
 
     /**

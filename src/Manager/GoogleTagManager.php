@@ -9,7 +9,7 @@
 namespace HeimrichHannot\GoogleTagManagerBundle\Manager;
 
 use Contao\System;
-use HeimrichHannot\GoogleTagManagerBundle\Tag\DataLayerInterface;
+use HeimrichHannot\GoogleTagManagerBundle\DataLayer\DataLayerInterface;
 
 class GoogleTagManager
 {
@@ -30,31 +30,31 @@ class GoogleTagManager
      */
     public function getDataLayers()
     {
-        $dataLayer = [];
+        $dataLayers = [];
 
         foreach ($this->dataLayer as $dataLayer) {
             if (!$dataLayer->hasContent()) {
                 continue;
             }
 
-            $dataLayer[] = $dataLayer->getContent();
+            $dataLayers = array_merge($dataLayers, $dataLayer->getContent());
         }
 
-        return $dataLayer;
+        return $dataLayers;
     }
 
     public function getHeadScript(string $containerId, array $dataLayerValues = [])
     {
-        return System::getContainer()->get('twig')->render('headScript', ['containerId' => $containerId, 'dataLayerValues' => $dataLayerValues]);
+        return System::getContainer()->get('twig')->render('@HeimrichHannotContaoGoogleTagManager/headScript.html.twig', ['containerId' => $containerId, 'dataLayerValues' => $dataLayerValues]);
     }
 
     public function getBodyScript(string $containerId)
     {
-        return System::getContainer()->get('twig')->render('bodyScript', ['containerId' => $containerId]);
+        return System::getContainer()->get('twig')->render('@HeimrichHannotContaoGoogleTagManager/bodyScript.html.twig', ['containerId' => $containerId]);
     }
 
     public function getLink(string $class, string $link, string $linkText, array $values)
     {
-        return System::getContainer()->get('twig')->render('link', ['class' => $class, 'link' => $link, 'linkText' => $linkText, 'values' => $values]);
+        return System::getContainer()->get('twig')->render('@HeimrichHannotContaoGoogleTagManager/link.html.twig', ['class' => $class, 'link' => $link, 'linkText' => $linkText, 'values' => $values]);
     }
 }

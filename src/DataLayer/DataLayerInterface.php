@@ -6,7 +6,7 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace HeimrichHannot\GoogleTagManagerBundle\Tag;
+namespace HeimrichHannot\GoogleTagManagerBundle\DataLayer;
 
 interface DataLayerInterface
 {

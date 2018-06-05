@@ -6,4 +6,4 @@
  */
 
 $GLOBALS['TL_LANG']['tl_settings']['googleTagManagerContainerId_legend'] = 'Google Tag Manager Einstellungen';
-$GLOBALS['TL_LANG']['tl_settings']['googleTagManagerContainerId']        = ['Google Tag Manager Container ID', 'Geben Sie hier Ihre eindeutige container ID ein.'];
+$GLOBALS['TL_LANG']['tl_settings']['googleTagManagerContainerId']        = ['Google Tag Manager Container ID', 'Geben Sie hier Ihre eindeutige container ID ein (GTM-XXXX).'];

@@ -1,3 +1,7 @@
 services:
     huh.google_tag_manager.tag_manager:
       class: HeimrichHannot\GoogleTagManagerBundle\Manager\GoogleTagManager
+    huh.google_tag_manager.data_layer:
+      class: HeimrichHannot\GoogleTagManagerBundle\DataLayer\DataLayer
+      arguments: ['@huh.google_tag_manager.tag_manager']
+      public: true
