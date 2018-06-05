@@ -1,0 +1,7 @@
+services:
+    huh.google_tag_manager.listener.hooks:
+      class: HeimrichHannot\GoogleTagManagerBundle\EventListener\HookListener
+      public: true
+      arguments:
+        - "@contao.framework"
+        - "@huh.google_tag_manager.tag_manager"

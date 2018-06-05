@@ -1,0 +1,3 @@
+services:
+    huh.google_tag_manager.tag_manager:
+      class: HeimrichHannot\GoogleTagManagerBundle\Manager\GoogleTagManager
