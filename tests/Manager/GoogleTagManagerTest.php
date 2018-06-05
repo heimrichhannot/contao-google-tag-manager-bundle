@@ -48,6 +48,9 @@ class GoogleTagManagerTest extends ContaoTestCase
         $dataLayer->setContent(['test' => 'test']);
 
         $this->assertSame(['test' => 'test'], $tagManager->getDataLayers());
+
+        $dataLayer->setContent([]);
+        $this->assertSame([], $tagManager->getDataLayers());
     }
 
     public function testGetHeadScript()
