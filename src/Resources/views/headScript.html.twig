@@ -4,7 +4,7 @@
     dataLayer = [
         {
             {% for key, value in dataLayerValues %}
-            '{{ key }}': {{ value }},
+            '{{ key }}': '{{ value }}',
             {% endfor %}
         }];
     {% else %}
