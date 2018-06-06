@@ -47,7 +47,13 @@ class HookListener
      */
     public function generatePage(PageModel $page, LayoutModel $layout, PageRegular $pageRegular)
     {
-        $pageRegular->Template->googleTagManagerHead = $this->tagManager->getHeadScript(Config::get('googleTagManagerContainerId'), $this->tagManager->getDataLayers());
-        $pageRegular->Template->googleTagManagerBody = $this->tagManager->getBodyScript(Config::get('googleTagManagerContainerId'));
+        $containerId = '';
+
+        if (null !== Config::get('googleTagManagerContainerId')) {
+            $containerId = Config::get('googleTagManagerContainerId');
+        }
+
+        $pageRegular->Template->googleTagManagerHead = $this->tagManager->getHeadScript($containerId, $this->tagManager->getDataLayers());
+        $pageRegular->Template->googleTagManagerBody = $this->tagManager->getBodyScript($containerId);
     }
 }
