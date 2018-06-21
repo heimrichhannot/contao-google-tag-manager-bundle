@@ -67,7 +67,5 @@ class InsertTagsListener
                 return $this->tagManager->getBodyScript($containerId);
                 break;
         }
-
-        return '';
     }
 }
