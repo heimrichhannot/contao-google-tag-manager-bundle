@@ -44,11 +44,7 @@ class InsertTagsListener
         $elements = explode('::', $tag);
         $key = strtolower($elements[0]);
 
-        if (in_array($key, $this->supportedTags, true)) {
-            return $this->replaceGoogleTagManagerInsertTag($key, $elements[1]);
-        }
-
-        return false;
+        return $this->replaceGoogleTagManagerInsertTag($key, $elements[1]);
     }
 
     /**
@@ -67,5 +63,7 @@ class InsertTagsListener
                 return $this->tagManager->getBodyScript($containerId);
                 break;
         }
+
+        return false;
     }
 }
