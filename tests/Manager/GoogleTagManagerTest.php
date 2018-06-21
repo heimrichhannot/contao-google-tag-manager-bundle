@@ -57,8 +57,8 @@ class GoogleTagManagerTest extends ContaoTestCase
     {
         $tagManager = new GoogleTagManager();
 
-        $this->assertSame('<!-- Google Tag Manager -->
-    dataLayer = [
+        $this->assertSame(
+'    dataLayer = [
     {
             \'test\': \'test\',
         }];
@@ -75,8 +75,7 @@ j.async = true;
 j.src =
 \'https://www.googletagmanager.com/gtm.js?id=\' + i + dl;
 f.parentNode.insertBefore(j, f);
-})(window, document, \'script\', \'dataLayer\', \'GTM-XXX\');
-<!-- End Google Tag Manager -->', $tagManager->getHeadScript('GTM-XXX', ['test' => 'test']));
+})(window, document, \'script\', \'dataLayer\', \'GTM-XXX\');', $tagManager->getHeadScript('GTM-XXX', ['test' => 'test']));
     }
 
     public function testGetBodyScript()
