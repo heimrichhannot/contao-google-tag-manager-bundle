@@ -13,13 +13,6 @@ use HeimrichHannot\GoogleTagManagerBundle\Manager\GoogleTagManager;
 class InsertTagsListener
 {
     /**
-     * supported google tag manager insert tags.
-     *
-     * @var array
-     */
-    private $supportedTags = ['googletagmanagerhead', 'googletagmanagerbody'];
-
-    /**
      * @var GoogleTagManager
      */
     private $tagManager;
