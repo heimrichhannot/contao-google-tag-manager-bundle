@@ -61,7 +61,7 @@ class GoogleTagManagerTest extends ContaoTestCase
 <script>
         dataLayer = [
         {
-                        \'test\': test,
+                        \'test\': \'test\',
                     }];
     
     (function(w, d, s, l, i) {

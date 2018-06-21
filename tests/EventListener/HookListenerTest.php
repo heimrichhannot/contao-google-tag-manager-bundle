@@ -35,10 +35,10 @@ class HookListenerTest extends ContaoTestCase
         $layout = $this->createMock(LayoutModel::class);
         $page = $this->createMock(PageModel::class);
 
-        $hook = new HookListener($this->mockContaoFramework([]), $tagManager);
+        $hook = new HookListener();
         $hook->generatePage($page, $layout, $pageRegular);
 
-        $this->assertTrue($pageRegular->Template->googleTagManagerHead);
-        $this->assertFalse($pageRegular->Template->googleTagManagerBody);
+        $this->assertSame('{{googletagmanagerhead::GTM-XXX|uncached}}', $pageRegular->Template->googleTagManagerHead);
+        $this->assertSame('{{googletagmanagerbody::GTM-XXX|uncached}}', $pageRegular->Template->googleTagManagerBody);
     }
 }

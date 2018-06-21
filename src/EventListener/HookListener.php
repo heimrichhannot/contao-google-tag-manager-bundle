@@ -9,35 +9,12 @@
 namespace HeimrichHannot\GoogleTagManagerBundle\EventListener;
 
 use Contao\Config;
-use Contao\CoreBundle\Framework\ContaoFrameworkInterface;
 use Contao\LayoutModel;
 use Contao\PageModel;
 use Contao\PageRegular;
-use HeimrichHannot\GoogleTagManagerBundle\Manager\GoogleTagManager;
 
 class HookListener
 {
-    /**
-     * @var ContaoFrameworkInterface
-     */
-    private $framework;
-
-    /**
-     * @var GoogleTagManager
-     */
-    private $tagManager;
-
-    /**
-     * Constructor.
-     *
-     * @param ContaoFrameworkInterface $framework
-     */
-    public function __construct(ContaoFrameworkInterface $framework, GoogleTagManager $tagManager)
-    {
-        $this->framework = $framework;
-        $this->tagManager = $tagManager;
-    }
-
     /**
      * Modify the page object.
      *
@@ -53,7 +30,7 @@ class HookListener
             $containerId = Config::get('googleTagManagerContainerId');
         }
 
-        $pageRegular->Template->googleTagManagerHead = $this->tagManager->getHeadScript($containerId, $this->tagManager->getDataLayers());
-        $pageRegular->Template->googleTagManagerBody = $this->tagManager->getBodyScript($containerId);
+        $pageRegular->Template->googleTagManagerHead = '{{googletagmanagerhead::'.$containerId.'|uncached}}';
+        $pageRegular->Template->googleTagManagerBody = '{{googletagmanagerbody::'.$containerId.'|uncached}}';
     }
 }

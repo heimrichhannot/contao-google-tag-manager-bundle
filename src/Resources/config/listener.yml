@@ -2,6 +2,8 @@ services:
     huh.google_tag_manager.listener.hooks:
       class: HeimrichHannot\GoogleTagManagerBundle\EventListener\HookListener
       public: true
+    huh.google_tag_manager.listener.insert_tags:
+      class: HeimrichHannot\GoogleTagManagerBundle\EventListener\InsertTagsListener
       arguments:
-        - "@contao.framework"
-        - "@huh.google_tag_manager.tag_manager"
+        - '@huh.google_tag_manager.tag_manager'
+      public: true
