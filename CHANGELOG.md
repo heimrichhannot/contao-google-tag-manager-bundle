@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2018-09-11
+
+### Fixed
+- contao 4.6 support
+
 ## [1.0.5] - 2018-06-21
 - fixed template
 
