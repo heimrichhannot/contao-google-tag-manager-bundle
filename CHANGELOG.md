@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2022-10-11
+- Changed: allow php 8
+- Changed: remove unused dependencies
+
 ## [1.1.0] - 2018-09-11
 
 ### Fixed
