@@ -5,17 +5,19 @@
 [![](https://img.shields.io/travis/heimrichhannot/contao-google-tag-manager-bundle/master.svg)](https://travis-ci.org/heimrichhannot/contao-google-tag-manager-bundle/)
 [![](https://img.shields.io/coveralls/heimrichhannot/contao-google-tag-manager-bundle/master.svg)](https://coveralls.io/github/heimrichhannot/contao-google-tag-manager-bundle)
 
-## Implementation
+## Setup
 
-### To implement Google Tag Manager on your website
+1. Install with composer or contao manager
 
-1. Set your google tag manager container id under the contao backend settings.
+        composer require heimrichhannot/contao-google-tag-manager-bundle
 
-2. Copy the following code snippet and paste it as close to the opening `<head>` tag as possible on every page of your website.
-`<?= $this->googleTagManagerHead ?>`
+1. Update your database
 
-3. Copy the following code snippet and paste it as close to the opening `<body>` tag as possible on every page of your website.
-`<?= $this->googleTagManagerBody ?>`
+1. Adjust your fe_page template
+    * Add `<?= $this->googleTagManagerHead ?>` to your head section
+    * Add `<?= $this->googleTagManagerBody ?>` to before the body closing tag
+
+## Advanced usage
 
 ### add data layer variables to a page
 
